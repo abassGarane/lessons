@@ -1,0 +1,31 @@
+syntax="proto3";
+option go_package = "../protos";
+enum Form{
+  one=0;
+  two=1;
+  three=2;
+  four=3;
+}
+message StudentRequest{
+  string name =1;
+  int32 adm_number = 2;
+  Form form = 3;
+  int64 yob=4;
+}
+message StudentResponse{
+  string name =1;
+  int32 adm_number = 2;
+  Form form = 3;
+  int64 yob=4;
+}
+message GetStudentRequest{
+  int32 adm_number=1;
+}
+message Response{
+
+}
+
+service Student{
+  rpc RegisterStudent(StudentRequest) returns (Response);
+  rpc GetStudent(GetStudentRequest) returns (StudentResponse);
+}
