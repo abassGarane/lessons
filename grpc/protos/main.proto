@@ -16,7 +16,7 @@ message StudentResponse{
   string name =1;
   int32 adm_number = 2;
   Form form = 3;
-  int64 yob=4;
+  uint32 age=4;
 }
 message GetStudentRequest{
   int32 adm_number=1;
